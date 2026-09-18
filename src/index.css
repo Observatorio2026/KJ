@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #F6F5FA;
+  color: #2A2733;
+  font-family: Outfit, Geist, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-display { font-family: 'El Messiri', Georgia, serif; }
+
+:focus-visible { outline: 3px solid #F1B809; outline-offset: 3px; border-radius: 4px; }
+
+/* Trazo de marca: la forma en pico del simbolo, usada como acento */
+.pico { clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%); }
+
+/* Fondo de cabecera con las curvas del manual */
+.curvas-marca {
+  background-color: #3E3185;
+  background-image:
+    radial-gradient(120% 90% at 92% 8%, #241A5E 0 46%, transparent 47%),
+    radial-gradient(90% 80% at 104% 30%, #5B4CB8 0 40%, transparent 41%);
+}
+
+.tarjeta {
+  background: #fff;
+  border: 1px solid rgba(62, 49, 133, 0.10);
+  box-shadow: 0 1px 0 rgba(62, 49, 133, 0.05);
+}
+.tarjeta-enlace { transition: border-color 200ms ease, transform 200ms ease; }
+.tarjeta-enlace:hover { border-color: #F1B809; transform: translateY(-2px); }
+
+/* Boton principal de la marca */
+.boton {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: #F1B809; color: #241A5E; font-weight: 600;
+  padding: .85rem 1.75rem; border-radius: 999px;
+  transition: background 200ms ease, transform 120ms ease;
+}
+.boton:hover { background: #E27815; color: #fff; }
+.boton:active { transform: scale(.98); }
+
+.boton-linea {
+  display: inline-flex; align-items: center; gap: .5rem;
+  border: 1.5px solid rgba(255,255,255,.45); color: #fff;
+  padding: .8rem 1.7rem; border-radius: 999px;
+  transition: border-color 200ms ease, background 200ms ease;
+}
+.boton-linea:hover { border-color: #F1B809; background: rgba(241,184,9,.12); }
+
+.prosa p { margin-bottom: 1.1rem; line-height: 1.8; }
+.prosa h2 { font-family: 'El Messiri', Georgia, serif; font-size: 1.6rem; margin: 2.2rem 0 .8rem; color: #3E3185; }
+.prosa ul { margin: 0 0 1.1rem 1.25rem; list-style: disc; }
+.prosa li { margin-bottom: .4rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
